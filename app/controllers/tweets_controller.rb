@@ -13,6 +13,12 @@ def create
 end	
 end	
 
+def destroy
+	@tweet = Tweet.find(params[:id])
+	@tweet.destroy
+	redirect_to root_path
+end	
+
 
 private def tweetparams 
 	params.require(:tweet).permit(:body)

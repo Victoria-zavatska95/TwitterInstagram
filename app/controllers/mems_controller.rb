@@ -16,6 +16,12 @@ def create
 end	
 end	
 
+def destroy
+	@mem = Mem.find(params[:id])
+	@mem.destroy
+	redirect_to mems_path
+end	
+
 
 private def memparams 
 	params.require(:mem).permit(:image)
