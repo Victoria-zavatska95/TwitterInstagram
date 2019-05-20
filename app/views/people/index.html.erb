@@ -4,8 +4,8 @@
 <% @people.each do |person| %>
 </br> <%= person.email %>
 <% if !current_user.followings.find_by(initial_user_id: person.id).nil? %>
-<a> <%= link_to "Unfollow", unfollow_path(person.id) %> 
-<a> <%= link_to "Write message", write_message_new_path(person.id) %> 
+<a> <%= link_to "Unfollow", unfollow_path(person.id) %>
+<a> <%= link_to "Write message", write_message_new_path(person.id) %></p>
 <% else if !current_user.followers.find_by(initial_user_id: person.id).nil?%>
 <a> <%= link_to "Follow Back", follow_path(person.id) %> </a>
 <a> <%= link_to "Write message", write_message_new_path(person.id) %> </a></p>

@@ -1,0 +1,27 @@
+<center><h1>Please see all news of your followings</h1></center>
+      <% if current_user.followings == [] || current_user.followings.nil? %>
+       No followings yet <br></p>
+      <% else %>
+        <% current_user.followings.each do |person| %>
+      <% if User.find(person.initial_user_id).tweets == [] || User.find(person.initial_user_id).tweets.nil? %>
+        No tweets of your following <%= User.find(person.initial_user_id).email %> yet <br></p>
+        <% else %>
+      <% User.find(person.initial_user_id).tweets.order("id DESC").each do |tweet| %>
+      <%= User.find(person.initial_user_id).email%> wrote: <br>
+       Tweet: <%= tweet.body %><br></p>
+           <%= tweet.created_at %><br> 
+	         <% end %>
+	     <% end %>
+
+       <% if User.find(person.initial_user_id).mems == [] || User.find(person.initial_user_id).mems.nil? %>
+        No mems of your following <%= User.find(person.initial_user_id).email %> yet <br></p>
+        <% else %>
+      <% User.find(person.initial_user_id).mems.order("id DESC").each do |mem| %>
+      <%= User.find(person.initial_user_id).email%> wrote: <br>
+        <%= image_tag mem.image_url, size: "300x400" %>
+           <%= mem.created_at %><br> 
+           <% end %>
+       <% end %>
+
+	       <% end %>
+	     <% end %>

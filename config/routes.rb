@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :messages
   resources :tweets
   resources :mems
+  get 'news/index'
   get '/people/follow/:id', to: "people#follow", as: :follow
   get '/people/unfollow/:id', to: "people#unfollow", as: :unfollow
   get '/people/my_followers', to: "people#my_followers", as: :my_followers
