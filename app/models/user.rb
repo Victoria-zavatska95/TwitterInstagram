@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :followings
   has_many :tweets, dependent: :destroy
   has_many :mems, dependent: :destroy
+  has_many :messages
 end

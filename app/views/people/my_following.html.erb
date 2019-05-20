@@ -4,6 +4,6 @@
 <% @following.each do |person| %>
 </br> <%= User.find_by(id: person.initial_user_id).email %>
 <a> <%= link_to "Unfollow", unfollow_path(person.initial_user_id) %> 
-<a> <%= link_to "Write message", new_message_path(person.initial_user_id) %> 
+<a> <%= link_to "Write message", write_message_new_path(person.initial_user_id) %> 
 <% end %>
 <% end %>
