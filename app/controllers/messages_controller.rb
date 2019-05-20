@@ -20,7 +20,7 @@ def write_message_create
 end
 end
 
-def delete
+def destroy
 	@message = Message.find(params[:id])
 	@message.destroy
 	redirect_to messages_path
