@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_20_142139) do
+ActiveRecord::Schema.define(version: 2019_05_20_185826) do
 
   create_table "followers", force: :cascade do |t|
     t.integer "initial_user_id"
@@ -26,12 +26,26 @@ ActiveRecord::Schema.define(version: 2019_05_20_142139) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "mems", force: :cascade do |t|
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.integer "from_user_id"
     t.integer "to_user_id"
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tweets", force: :cascade do |t|
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

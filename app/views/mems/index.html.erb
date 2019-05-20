@@ -1,0 +1,9 @@
+<%= link_to "Create mem", new_mem_path %></p>
+You posted <%= "#{current_user.mems.count} mems" %>
+<% if current_user.mems != [] %>
+<% current_user.mems.each do |mem| %>
+      <p>
+      	<%= image_tag mem.image_url, size: "300x400" %>
+      </p>
+      <% end %>
+<% end %>

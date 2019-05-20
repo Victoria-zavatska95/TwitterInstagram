@@ -1,0 +1,4 @@
+<%= form_for @tweet, url: tweets_path(id: @tweet.id) do |f|%>
+Your message <%= f.text_area :body, size: "30x10" %><br>
+<%= f.submit "Create" %>
+<% end %>
