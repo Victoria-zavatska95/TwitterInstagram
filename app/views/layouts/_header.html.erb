@@ -2,7 +2,8 @@
   <%= link_to "Home", root_path %> |
   <%= link_to "Logout",  destroy_user_session_path, method: :delete %> |
   <%= link_to "People", people_index_path %> | 
-  <%= link_to "Messages", messages_path %> 
+  <%= link_to "Messages", messages_path %> |
+  <%= link_to "Mems", mems_path %> 
 <% else %>
    <%= link_to "Login", new_user_session_path %> |
 <% end %>

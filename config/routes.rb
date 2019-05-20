@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "pages#index"
   resources :messages
   resources :tweets
+  resources :mems
   get '/people/follow/:id', to: "people#follow", as: :follow
   get '/people/unfollow/:id', to: "people#unfollow", as: :unfollow
   get '/people/my_followers', to: "people#my_followers", as: :my_followers

@@ -1,0 +1,4 @@
+<%= form_for @mem, url: mems_path(id: @mem.id), html: { multipart: true } do |f|%>
+You can attach only mems <%= f.file_field :image %><br>
+<%= f.submit "Create" %>
+<% end %>
