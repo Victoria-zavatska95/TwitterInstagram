@@ -6,8 +6,11 @@ end
 
 def create
 	@tweet = current_user.tweets.build(tweetparams)
-	@tweet.save
+	if @tweet.save
     redirect_to root_path
+    else
+    render 'new'
+end	
 end	
 
 

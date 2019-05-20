@@ -9,8 +9,11 @@ end
 
 def create
 	@mem = current_user.mems.build(memparams)
-	@mem.save
+	if @mem.save
     redirect_to root_path
+    else
+    render 'new'
+end	
 end	
 
 

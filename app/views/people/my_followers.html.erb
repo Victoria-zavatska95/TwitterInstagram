@@ -5,10 +5,10 @@
 </br> <%= User.find_by(id: person.initial_user_id).email %>
 <% if !current_user.followings.find_by(initial_user_id: person.initial_user_id).nil? %>
 <a> <%= link_to "Unfollow", unfollow_path(person.initial_user_id) %> 
-<a> <%= link_to "Write message", new_message_path(person.initial_user_id) %> 
+<a> <%= link_to "Write message", write_message_new_path(person.initial_user_id) %> 
 <% else %>	
 <a> <%= link_to "Follow back", follow_path(person.initial_user_id) %> </a>
-<a> <%= link_to "Write message", new_message_path(person.initial_user_id) %>
+<a> <%= link_to "Write message", write_message_new_path(person.initial_user_id) %>
 <% end %>
 <% end %>
 <% end %>
