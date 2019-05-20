@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "pages#index"
   resources :messages
+  resources :tweets
   get '/people/follow/:id', to: "people#follow", as: :follow
   get '/people/unfollow/:id', to: "people#unfollow", as: :unfollow
   get '/people/my_followers', to: "people#my_followers", as: :my_followers

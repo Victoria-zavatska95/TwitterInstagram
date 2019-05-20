@@ -1,2 +1,8 @@
 <%= link_to "#{@followers.count} Followers", my_followers_path %> |
-<%= link_to "#{@following.count} Followings", my_following_path %> 
+<%= link_to "#{@following.count} Followings", my_following_path %> </br> </p>
+	Do you like to write a tweet. It is allowed to write only slangs here
+<%= link_to "Tweet", new_tweet_path %></p>
+You posted <%= "#{current_user.tweets.count} tweets" %>
+<% current_user.tweets.each do |tweet| %>
+</br> <%= tweet.body %>
+<% end %>
