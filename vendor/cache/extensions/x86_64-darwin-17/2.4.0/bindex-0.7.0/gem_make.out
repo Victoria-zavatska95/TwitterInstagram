@@ -1,0 +1,15 @@
+current directory: /Users/alexanderbalogh/Documents/RubyModul2/TwitterInstagram/vendor/cache/gems/bindex-0.7.0/ext/skiptrace
+/Users/alexanderbalogh/.rvm/rubies/ruby-2.4.4/bin/ruby -r ./siteconf20190520-2957-zwfecx.rb extconf.rb
+creating Makefile
+
+current directory: /Users/alexanderbalogh/Documents/RubyModul2/TwitterInstagram/vendor/cache/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/alexanderbalogh/Documents/RubyModul2/TwitterInstagram/vendor/cache/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/cruby.bundle
+
+current directory: /Users/alexanderbalogh/Documents/RubyModul2/TwitterInstagram/vendor/cache/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20190520-2957-nad9q9/skiptrace
