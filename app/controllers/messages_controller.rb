@@ -6,6 +6,7 @@ end
 def write_message_new
 	@message = Message.new
 	@to_user_id = params[:id]
+
 end
 
 def write_message_create
