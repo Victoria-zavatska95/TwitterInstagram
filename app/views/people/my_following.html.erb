@@ -2,7 +2,13 @@
  <p>You have no followings yet <br></p>
  <% else %>
 <% @following.each do |person| %>
-</br> <%= User.find_by(id: person.initial_user_id).email %>
+<% if User.find_by(id: person.initial_user_id).userparam.nil? %>
+<%= image_tag "avatar.png", size: "50x50" %>
+ <%= User.find_by(id: person.initial_user_id).email %>
+<% else %>
+<%= image_tag User.find_by(id: person.initial_user_id).userparam.avatar_url, size: "50x50" %>
+<%= User.find_by(id: person.initial_user_id).userparam.nick_name %>
+<% end %>
 <a> <%= link_to "Unfollow", unfollow_path(person.initial_user_id) %> 
 <a> <%= link_to "Write message", write_message_new_path(person.initial_user_id) %> 
 <% end %>

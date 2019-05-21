@@ -5,5 +5,7 @@
 You posted <%= "#{current_user.tweets.count} tweets" %>
 <% current_user.tweets.each do |tweet| %>
 </br> <%= tweet.body %>
-<%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= tweet.created_at.strftime("%F %T") %>
+<%= link_to "Edit tweet", edit_tweet_path(tweet.id) %>
+<%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %><p>
 <% end %>

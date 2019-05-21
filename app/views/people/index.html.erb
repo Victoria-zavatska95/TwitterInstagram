@@ -1,8 +1,14 @@
 <% if @people == [] || @people.nil? %>
  <p>You are the only one user here <br></p>
  <% else %>
-<% @people.each do |person| %>
-</br> <%= person.email %>
+ <% @people.each do |person| %>
+<% if person.userparam.nil? %>
+<%= image_tag "avatar.png", size: "50x50" %>
+ <%= person.email %>
+<% else %>
+<%= image_tag person.userparam.avatar_url, size: "50x50" %>
+<%= person.userparam.nick_name %>
+<% end %>
 <% if !current_user.followings.find_by(initial_user_id: person.id).nil? %>
 <a> <%= link_to "Unfollow", unfollow_path(person.id) %>
 <a> <%= link_to "Write message", write_message_new_path(person.id) %></p>
