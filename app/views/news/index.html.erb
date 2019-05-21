@@ -8,8 +8,8 @@
         <% else %>
       <% User.find(person.initial_user_id).tweets.order("id DESC").each do |tweet| %>
       <%= User.find(person.initial_user_id).email%> wrote: <br>
-       Tweet: <%= tweet.body %><br></p>
-           <%= tweet.created_at %><br> 
+       Tweet: <%= tweet.body %><br>
+           <%= tweet.created_at.strftime("%F %T") %><br></p>
 	         <% end %>
 	     <% end %>
 
@@ -19,7 +19,7 @@
       <% User.find(person.initial_user_id).mems.order("id DESC").each do |mem| %>
       <%= User.find(person.initial_user_id).email%> wrote: <br>
         <%= image_tag mem.image_url, size: "300x400" %>
-           <%= mem.created_at %><br> 
+           <%= mem.created_at.strftime("%F %T") %><br> 
            <% end %>
        <% end %>
 

@@ -5,6 +5,11 @@
   <%= link_to "Messages", messages_path %> |
   <%= link_to "Mems", mems_path %> |
   <%= link_to "News", news_index_path %> |
+<% if current_user.userparam.nil? %>
+  <%= link_to "Profile", new_userparam_path %> 
+  <% else %>
+  <%= link_to "Profile", userparam_path(current_user.id) %> 
+  <% end %>
 <% else %>
    <%= link_to "Login", new_user_session_path %> 
 <% end %>

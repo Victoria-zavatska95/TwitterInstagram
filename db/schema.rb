@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_20_214114) do
+ActiveRecord::Schema.define(version: 2019_05_21_045334) do
 
   create_table "followers", force: :cascade do |t|
     t.integer "initial_user_id"
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(version: 2019_05_20_214114) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+  end
+
+  create_table "userparams", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "nick_name"
+    t.string "avatar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
