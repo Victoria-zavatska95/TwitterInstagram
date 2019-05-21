@@ -12,8 +12,8 @@ RSpec.describe Following, type: :model do
       expect(subject).to be_valid
     end
     
-    it "should not be valid without body" do
-       subject.image = nil
+    it "should not be valid without initial_user_id" do
+       subject.initial_user_id = nil
        expect(subject).to_not be_valid
     end
     
