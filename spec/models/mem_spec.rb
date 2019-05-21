@@ -1,10 +1,11 @@
+
 require 'rails_helper'
 
-RSpec.describe Following, type: :model do
-    let!(:user){create(:user)}
+RSpec.describe Mem, type: :model do
+   let!(:user){create(:user)}
 
   subject{
-     build(:following, user: user)
+     build(:Mem, user: user)
   }
 
   context "validation" do
@@ -21,6 +22,6 @@ RSpec.describe Following, type: :model do
     it { should belong_to(:user) }
   end
     
-    it { should validate_presence_of(:initial_user_id) }
+    it { should validate_presence_of(:image) }
   end
 end

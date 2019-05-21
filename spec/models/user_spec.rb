@@ -13,9 +13,6 @@ RSpec.describe User, type: :model do
   end
 
   describe "associations" do
-    it { should have_many(:tweets).dependent(:destroy) && 
-    	 should have_many(:follower) &&
-    	 should have_many(:following) }
+    it { should have_many(:tweets).dependent(:destroy) && should have_many(:tweets).dependent(:destroy) && should have_many(:followers) && should have_many(:followings) && should have_many(:messages) }
   end
 end
-

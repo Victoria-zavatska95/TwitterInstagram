@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Following, type: :model do
-    let!(:user){create(:user)}
+RSpec.describe Message, type: :model do
+   let!(:user){create(:user)}
 
   subject{
-     build(:following, user: user)
+     build(:message, user: user)
   }
 
   context "validation" do
@@ -13,14 +13,10 @@ RSpec.describe Following, type: :model do
     end
     
     it "should not be valid without body" do
-       subject.image = nil
+       subject.body = nil
        expect(subject).to_not be_valid
     end
     
- context "association" do
-    it { should belong_to(:user) }
-  end
-    
-    it { should validate_presence_of(:initial_user_id) }
+    it { should validate_presence_of(:body) }
   end
 end
