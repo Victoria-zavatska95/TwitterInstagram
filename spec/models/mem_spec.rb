@@ -5,7 +5,7 @@ RSpec.describe Mem, type: :model do
    let!(:user){create(:user)}
 
   subject{
-     build(:Mem, user: user)
+     build(:mem, user: user)
   }
 
   context "validation" do

@@ -4,7 +4,7 @@ RSpec.describe Message, type: :model do
    let!(:user){create(:user)}
 
   subject{
-     build(:message, user: user)
+     build(:message, from_user_id: user.id, user_id: user.id)
   }
 
   context "validation" do

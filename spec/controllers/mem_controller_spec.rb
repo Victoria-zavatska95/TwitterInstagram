@@ -11,7 +11,7 @@ login_user
   end
 
   describe "GET #index" do
-    it 'gowno' do
+    it 'inddex' do
     expect(response).to have_http_status(200)
   end
 end
