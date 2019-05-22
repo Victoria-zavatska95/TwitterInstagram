@@ -4,7 +4,7 @@ RSpec.describe Following, type: :model do
     let!(:user){create(:user)}
 
   subject{
-     build(:following, user: user)
+     build(:following, user_id: user.id, initial_user_id: user.id)
   }
 
   context "validation" do
