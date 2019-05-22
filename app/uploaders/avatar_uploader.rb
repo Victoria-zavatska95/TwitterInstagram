@@ -17,6 +17,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
+     def default_url
+      "/images/avatar/thumb.png"
+   end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:

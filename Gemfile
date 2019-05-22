@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.3'
 gem 'rake', '12.3.2'
 
 gem 'carrierwave', '~> 1.0'
-
+gem "paperclip", "~> 6.0.0"
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
