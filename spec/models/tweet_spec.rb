@@ -24,13 +24,4 @@ RSpec.describe Tweet, type: :model do
     it { should belong_to(:user) }
   end
 
-
- context "when user nickname is already taken" do
-   before do 
-    profile_dub = create(:profile, user: user)
-   end
-   
-   it { should_not be_valid }  
- end
- 
 end

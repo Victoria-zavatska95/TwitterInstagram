@@ -1,6 +1,6 @@
 class MemsController < ApplicationController
 def index
-	@mems = current_user.mems
+	@mems = current_user.mems.order("id DESC")
 end	
 
 def new
@@ -10,7 +10,7 @@ end
 def create
 	@mem = current_user.mems.build(memparams)
 	if @mem.save
-    redirect_to root_path
+    redirect_to mems_path
     else
     render 'new'
 end	
