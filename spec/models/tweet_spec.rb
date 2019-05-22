@@ -4,7 +4,7 @@ RSpec.describe Tweet, type: :model do
    let!(:user){create(:user)}
 
   subject{
-     build(:tweet, user: user)
+     build(:tweet, user: user, body: "Body")
   }
 
   context "validation" do
