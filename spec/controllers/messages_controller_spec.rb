@@ -17,7 +17,7 @@ end
 
   describe 'GET #write_message_new' do
     it "should find current_user and open form for create message" do
-      get :new
+      get :write_message_new, params: {id: 0}
       expect(subject.current_user.email).to eq("tester@test.com")
       expect(subject.current_user.email).to_not eq(user.email)
       expect(response).to have_http_status(200)
@@ -26,9 +26,9 @@ end
 
   describe 'POST #write_message_create' do
     it "should create message and redirect to index page" do
-      post :create, params: {message: {body:"Body", from_user_id:subject.current_user.id, to_user_id:subject.current_user.id}}
-      expect(subject.current_user.message.body).to eq("Body")
-      expect(response).to redirect_to root_path
+      post :write_message_create, params: {id: 1, message: {body:"Body", from_user_id:subject.current_user.id, to_user_id:subject.current_user.id}}
+      expect(subject.current_user.messages[0].body).to eq("Body")
+      expect(response).to redirect_to messages_path
     end
   end
   end
