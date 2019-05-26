@@ -1,5 +1,9 @@
+
+ <%= link_to "Followers", my_followers_path %> |
+ 
 <%= link_to "#{@followers.count} Followers", my_followers_path %> |
-<%= link_to "#{@following.count} Followings", my_following_path %> </br> </p>
+<%= link_to "#{@following.count} Followings", my_following_path %>
+ </br> </p>
 	Do you like to write a tweet. It is allowed to write only slangs here
 <%= link_to "Tweet", new_tweet_path %></p>
 You posted <%= "#{current_user.tweets.count} tweets" %>
@@ -9,3 +13,6 @@ You posted <%= "#{current_user.tweets.count} tweets" %>
 <%= link_to "Edit tweet", edit_tweet_path(tweet.id) %>
 <%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %><p>
 <% end %>
+
+
+

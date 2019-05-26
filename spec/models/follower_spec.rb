@@ -16,6 +16,11 @@ RSpec.describe Follower, type: :model do
       expect(subject).to be_valid
     end
     
+ it "should not be valid without initial_user_id" do
+       subject.initial_user_id = nil
+       expect(subject).to_not be_valid
+    end
+    
     it "should not be valid without user_id" do
        subject.user_id = nil
        subject.initial_user_id = user.id
