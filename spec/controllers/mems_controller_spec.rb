@@ -28,8 +28,8 @@ end
   describe 'POST #create' do
     it "should create mem and redirect to index page" do
       post :create, params: {mem: {image:Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, '/spec/support/my_image.jpg')), 'image/jpeg')}}
-      expect(subject.current_user.tweet.image).to eq("Body")
-      expect(response).to redirect_to root_path
+      expect(subject.current_user.mems[0]).to_not eq(nil)
+      expect(response).to redirect_to mems_path
     end
   end
 
