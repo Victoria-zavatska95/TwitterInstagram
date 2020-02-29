@@ -5,7 +5,7 @@ ruby '2.4.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
-gem 'rake', '12.3.2'
+gem 'rake', '12.3.3'
 
 gem 'carrierwave', '~> 1.0'
 gem "paperclip", "~> 6.0.0"
